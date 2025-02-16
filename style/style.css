@@ -1,0 +1,85 @@
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Animation classes */
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+#history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#history-list::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 10px;
+}
+
+#history-list::-webkit-scrollbar-thumb {
+    background: #4c1d95;
+    border-radius: 10px;
+}
+
+#history-list::-webkit-scrollbar-thumb:hover {
+    background: #6d28d9;
+}
+
+/* Custom animations for history items */
+.history-item {
+    transition: all 0.3s ease;
+}
+
+.history-item:hover {
+    background-color: #2d3748;
+    transform: translateX(3px);
+}
+
+/* Dark theme overrides for datetime-local input */
+input[type="datetime-local"] {
+    color-scheme: dark;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.8);
+}
+
+/* Adding some responsive adjustments */
+@media (max-width: 640px) {
+    .text-4xl { font-size: 1.75rem; }
+    .text-3xl { font-size: 1.5rem; }
+    .text-2xl { font-size: 1.25rem; }
+    .p-6 { padding: 1rem; }
+}
+
+/* Glow effect for buttons */
+#convert-btn:hover {
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+#swap-btn:hover {
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
